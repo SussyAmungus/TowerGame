@@ -1,0 +1,21 @@
+{
+	"Version": "1.0.0",
+
+	"levels": [
+
+		{
+			"levelName": 1,
+			"enemies": 100
+		},
+		{
+			"levelName": 2,
+			"enemies": 5
+		}, 
+		{
+			"levelName": 3,
+			"enemies": 10
+		}
+
+	]
+
+}

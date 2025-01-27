@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnm1sc7qsuns7"]
+
+[ext_resource type="PackedScene" uid="uid://chrvefql7642p" path="res://Tower/TowerComps/beamer.tscn" id="1_yikbb"]
+[ext_resource type="PackedScene" uid="uid://0jcx2cuxvxtv" path="res://Tower/TowerComps/collum.tscn" id="2_1q13l"]
+
+[node name="Unit" type="Node2D"]
+
+[node name="BeamUp" parent="." instance=ExtResource("1_yikbb")]
+position = Vector2(-2, -239)
+
+[node name="BeamDown" parent="." instance=ExtResource("1_yikbb")]
+position = Vector2(-5, 243)
+
+[node name="CollumLeft" parent="." instance=ExtResource("2_1q13l")]
+position = Vector2(-146, -1)
+
+[node name="CollumRight" parent="." instance=ExtResource("2_1q13l")]
+position = Vector2(140, 0)

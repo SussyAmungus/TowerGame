@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://e8k0jcd154mv"]
+
+[ext_resource type="Script" path="res://TitleScreen.cs" id="1_vwyak"]
+
+[node name="Title Screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vwyak")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.5
+offset_top = -164.5
+offset_right = 337.5
+offset_bottom = 164.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = -2.0
+offset_right = 478.0
+offset_bottom = 83.0
+
+[node name="Button" type="Button" parent="Panel/PanelContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 242.0
+offset_right = 478.0
+offset_bottom = 327.0
+
+[node name="Button" type="Button" parent="Panel/PanelContainer2"]
+layout_mode = 2
+text = "Credits"
+
+[node name="PanelContainer3" type="PanelContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 379.0
+offset_right = 478.0
+offset_bottom = 464.0
+
+[node name="Button" type="Button" parent="Panel/PanelContainer3"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Panel/PanelContainer/Button" to="." method="OnButtonPressedPlay"]
+[connection signal="pressed" from="Panel/PanelContainer2/Button" to="." method="OnButtonPressedCredits"]
+[connection signal="pressed" from="Panel/PanelContainer3/Button" to="." method="OnButtonPressed3"]

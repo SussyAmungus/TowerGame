@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5sbfdxebu84w"]
+
+[ext_resource type="Script" path="res://Turret.cs" id="1_2o15u"]
+[ext_resource type="Texture2D" uid="uid://c2rv04gbeba8n" path="res://icon.svg" id="2_wrqnh"]
+
+[node name="TurretRoot" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_2o15u")
+
+[node name="TurretBase" type="Sprite2D" parent="."]
+texture = ExtResource("2_wrqnh")
+
+[node name="TurretHead" type="Sprite2D" parent="TurretBase"]
+position = Vector2(1, -72)
+scale = Vector2(1, 0.24)
+texture = ExtResource("2_wrqnh")

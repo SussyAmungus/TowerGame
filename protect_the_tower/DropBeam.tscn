@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxlbrvswilk0h"]
+
+[ext_resource type="Texture2D" uid="uid://c2rv04gbeba8n" path="res://icon.svg" id="1_7kxll"]
+[ext_resource type="Script" path="res://DropBeam.cs" id="1_w2kmm"]
+
+[node name="DropBeam" type="Node2D"]
+script = ExtResource("1_w2kmm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499999, 315.5)
+scale = Vector2(0.00781248, 4.91406)
+texture = ExtResource("1_7kxll")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-1, 585)
+collision_mask = 2
+collide_with_areas = true

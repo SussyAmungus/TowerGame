@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://df4ghxymjc33k"]
+
+[ext_resource type="Script" path="res://Tower.cs" id="1_clysa"]
+[ext_resource type="PackedScene" uid="uid://b5sbfdxebu84w" path="res://Turret.tscn" id="2_u14by"]
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_clysa")
+
+[node name="TurretRoot" parent="." instance=ExtResource("2_u14by")]
+position = Vector2(50, -6)

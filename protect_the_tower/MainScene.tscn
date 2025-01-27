@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5rgm047201m6"]
+
+[ext_resource type="Script" path="res://MainScene.cs" id="1_pe7bi"]
+[ext_resource type="PackedScene" uid="uid://df4ghxymjc33k" path="res://Tower.tscn" id="2_e84wc"]
+[ext_resource type="PackedScene" uid="uid://bjonabfm8pju" path="res://GUIAssets/Constructmenu.tscn" id="2_tq1ki"]
+[ext_resource type="PackedScene" uid="uid://d14pdgetlgp2k" path="res://GUIAssets/MoneyLabel.tscn" id="4_bmu3f"]
+[ext_resource type="PackedScene" uid="uid://dv5kbu5l1a4tu" path="res://GUIAssets/BuildMenu.tscn" id="5_672nu"]
+[ext_resource type="PackedScene" uid="uid://e8k0jcd154mv" path="res://TitleScreen.tscn" id="6_jod3g"]
+[ext_resource type="PackedScene" uid="uid://bmbjfnfx2mlno" path="res://Message.tscn" id="7_mjb8s"]
+[ext_resource type="PackedScene" uid="uid://xa5ompru3psi" path="res://GameOver.tscn" id="8_gdbod"]
+[ext_resource type="PackedScene" uid="uid://bml11s6x54d0s" path="res://BackGround.tscn" id="9_efw10"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_pe7bi")
+
+[node name="ConstructMenu" parent="." instance=ExtResource("2_tq1ki")]
+offset_left = 1918.0
+offset_right = 1918.0
+
+[node name="Tower" parent="." instance=ExtResource("2_e84wc")]
+position = Vector2(769, 466)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MoneyLabel" parent="." instance=ExtResource("4_bmu3f")]
+
+[node name="BuildMenu" parent="." instance=ExtResource("5_672nu")]
+
+[node name="Title Screen" parent="." instance=ExtResource("6_jod3g")]
+visible = false
+offset_left = 997.0
+offset_top = 407.0
+offset_right = 997.0
+offset_bottom = 407.0
+
+[node name="Message" parent="." instance=ExtResource("7_mjb8s")]
+offset_left = 378.0
+offset_top = 50.0
+offset_right = 378.0
+offset_bottom = 50.0
+
+[node name="GameOver" parent="." instance=ExtResource("8_gdbod")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 998.0
+offset_top = 494.0
+offset_right = 998.0
+offset_bottom = 494.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="BackGround" parent="." instance=ExtResource("9_efw10")]
+position = Vector2(-4, 32)
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv5kbu5l1a4tu"]
+
+[ext_resource type="Script" path="res://Tower/TowerComps/BuildMenu.cs" id="1_wy5hu"]
+
+[node name="BuildMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wy5hu")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 65.0
+offset_right = 317.0
+offset_bottom = 565.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 151.0
+offset_bottom = 63.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 29
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="PanelName" type="Panel" parent="PanelContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2/VBoxContainer/HBoxContainer/PanelName"]
+layout_mode = 2
+offset_right = 60.0
+offset_bottom = 23.0
+text = "
+"
+
+[node name="Panel2" type="Panel" parent="PanelContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer2/VBoxContainer/HBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 22.0
+offset_bottom = 31.0
+text = ">"
+flat = true
+clip_text = true
+
+[node name="Panel3" type="Panel" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="RepairButton" type="Button" parent="PanelContainer2/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_right = 151.0
+offset_bottom = 31.0
+text = "Repair"
+
+[node name="PanelContainer3" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_right = 592.0
+offset_bottom = 116.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer3"]
+layout_mode = 2
+text = "dsdsdsdsdsdsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+
+[connection signal="pressed" from="PanelContainer2/VBoxContainer/HBoxContainer/Panel2/Button" to="." method="OnButtonPressedDetails"]
+[connection signal="pressed" from="PanelContainer2/VBoxContainer/Panel3/RepairButton" to="." method="OnButtonPressedRepair"]

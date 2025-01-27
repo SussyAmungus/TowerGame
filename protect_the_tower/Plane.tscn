@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj4tlsupxhrcv"]
+
+[ext_resource type="Script" path="res://Plane.cs" id="1_pwigt"]
+[ext_resource type="Texture2D" uid="uid://b3wq4413d1hal" path="res://Other Assets/Plane.png" id="2_ft26g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptibb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ft26g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hroax"]
+size = Vector2(54, 32)
+
+[node name="PlaneRoot" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_pwigt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ptibb")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+texture_filter = 2
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_hroax")
